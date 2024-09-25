@@ -7,6 +7,7 @@ public class Horse {
     public Horse(String theName, double theProbablity) {
         theName = name;
         theProbablity = probability;
+        
     }
 
 }

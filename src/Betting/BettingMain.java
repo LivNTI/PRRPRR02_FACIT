@@ -10,5 +10,6 @@ public class BettingMain {
         Horse firstHorse = new Horse("Secriteriat", 0.7);
         Horse secondHorse = new Horse("Black Beauty", 0.5);
 
+
     }
 }

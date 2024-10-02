@@ -29,7 +29,7 @@ public class TamgochiMain {
                 theTam.teach(word);
             }
             if (doWhat == "2") {
-                theTam.talk();
+                theTam.speak();
             }
             if (doWhat == "3") {
                 theTam.feed();

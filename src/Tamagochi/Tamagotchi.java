@@ -27,7 +27,7 @@ public class Tamagotchi {
         }
     }
 
-    public void talk() {
+    public void speak() {
         int wordNum = rand.nextInt(words.size());
         System.out.println(name + " says: " + words.get(wordNum));
         reduceBoredom();

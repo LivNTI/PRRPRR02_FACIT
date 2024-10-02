@@ -1,4 +1,4 @@
-package Betting;
+package AtTheRaces;
 
 public class Better {
     String name;

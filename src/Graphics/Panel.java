@@ -6,17 +6,17 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Panel extends JPanel implements MouseListener {
-    public Panel(){
+    public Panel() {
         this.setBackground(Color.PINK);
-        this.setSize(500,500);
+        this.setSize(500, 500);
         this.setVisible(true);
 
 
     }
 
-    public void drawComponent(Graphics g){
+    public void drawComponent(Graphics g) {
         g.setColor(Color.BLUE);
-        g.fillRect(100,100, 300,300);
+        g.fillRect(100, 100, 300, 300);
 
     }
 
@@ -47,3 +47,6 @@ public class Panel extends JPanel implements MouseListener {
 
     }
 }
+
+
+// @author LivNTI

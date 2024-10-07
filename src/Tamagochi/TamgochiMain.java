@@ -46,3 +46,6 @@ public class TamgochiMain {
         myScan.nextLine();
     }
 }
+
+
+// @author LivNTI

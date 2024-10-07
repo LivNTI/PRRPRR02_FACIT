@@ -6,3 +6,6 @@ public class Main {
         new Window();
     }
 }
+
+
+// @author LivNTI

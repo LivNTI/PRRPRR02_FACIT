@@ -7,6 +7,9 @@ public class Better {
     public Better(String theName, int money) {
         name = theName;
         saldo = money;
-        
+
     }
 }
+
+
+// @author LivNTI

@@ -11,7 +11,7 @@ public class BettingMain {
         Better theBetter = new Better("BetBig", 500);
         Horse firstHorse = new Horse("Secriteriat", "3:1");
 
-        System.out.println("Howe much do you wnat to bet?");
+        System.out.println("Howe much do you want to bet?");
         int theBet = myScanner.nextInt();
         myScanner.nextLine();
 

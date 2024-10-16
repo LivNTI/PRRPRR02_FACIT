@@ -20,9 +20,7 @@ public class TvMain {
             FileOutputStream fileOUt = new FileOutputStream("./TVSerializationTVShows.ser");
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOUt);
 
-            for (TvSeries aShow : shows) {
-                objectOut.writeObject(aShow);
-            }
+            objectOut.writeObject(shows);
 
             fileOUt.close();
             objectOut.close();
@@ -39,15 +37,8 @@ public class TvMain {
             FileInputStream fileIn = new FileInputStream("./TVSerializationTVShows.ser");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 
-            try {
-                while (true) {
+            shows = (ArrayList<TvSeries>) objectIn.readObject();
 
-                    shows.add((TvSeries) objectIn.readObject());
-                }
-
-            } catch (Exception error) {
-                System.out.println("No more objects");
-            }
             fileIn.close();
             objectIn.close();
 
@@ -55,6 +46,8 @@ public class TvMain {
 
         } catch (IOException error) {
             System.out.println("could not write to file");
+        } catch (ClassNotFoundException e) {
+            System.out.println("no such class found");
         }
     }
 }

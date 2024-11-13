@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class TvMain {
     private ArrayList<TvSeries> shows = new ArrayList<>();
-    Scanner myScan = new Scanner(System.in);
+    private Scanner myScan = new Scanner(System.in);
+    private String fileName = "./src/TVSerialization/TVSerializationTVShows.ser";
+
 
     public TvMain() {
-        createShowData();
-        write2File();
+        //createShowData();
+        //write2File();
         readFromFile();
         startProgram();
 
@@ -31,24 +33,59 @@ public class TvMain {
             i++;
             System.out.println(i + ") None, I Quit");
             System.out.println("Which show do you want to work with");
+            //Todo: add integer check
             try {
                 ans = myScan.nextInt();
                 myScan.nextLine();
 
+
                 if (ans > i || ans < 0) {
+                    System.out.println("your choise was " + ans);
                     System.out.println("please choose a prprer answer");
-                    
+
                 } else if (ans == i) {
                     write2File();
                     System.out.println("OK, Good bye ");
                     break;
+                } else {
+                    keepGoing = seriesOptions(shows.get(ans - 1));
                 }
             } catch (Exception error) {
                 System.out.println("please choose a prprer answer");
             }
-
-
         } while (keepGoing);
+    }
+
+    private boolean seriesOptions(TvSeries theShow) {
+        //Todo: add user options
+        int ans;
+        System.out.print("you are working with ");
+        theShow.printInfo();
+        String[] options = new String[]{"Do you want to:", ") add episodes to a season", ") Change the rating", ") Choose another Tv Series", ") Quit"};
+        System.out.println(options[0]);
+        for (int i = 1; i < options.length; i++) {
+            System.out.println(i + options[i]);
+        }
+
+        while (true) {
+            while (myScan.hasNextInt()) {
+                ans = myScan.nextInt();
+                myScan.nextLine();
+                if (ans == 1) {
+
+                } else if (ans == 2) {
+
+                }
+                if (ans < 0 || ans > options.length) {
+                    System.out.println("PLS chosse a propre answer");
+                } else if (ans == options.length) {
+                    System.out.println("OK bye");
+                    return false;
+                }
+            }
+        }
+
+
     }
 
     private void createShowData() {
@@ -66,7 +103,7 @@ public class TvMain {
 
     public void write2File() {
         try {
-            FileOutputStream fileOUt = new FileOutputStream("TVSerializationTVShows.ser");
+            FileOutputStream fileOUt = new FileOutputStream(fileName);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOUt);
 
             objectOut.writeObject(shows);
@@ -83,7 +120,7 @@ public class TvMain {
 
     public void readFromFile() {
         try {
-            FileInputStream fileIn = new FileInputStream("TVSerializationTVShows.ser");
+            FileInputStream fileIn = new FileInputStream(fileName);
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 
             shows = (ArrayList<TvSeries>) objectIn.readObject();
@@ -100,3 +137,6 @@ public class TvMain {
         }
     }
 }
+
+
+// @author LivNTI

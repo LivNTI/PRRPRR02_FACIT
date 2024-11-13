@@ -36,3 +36,6 @@ public class TvSeries implements Serializable {
         System.out.println("Name: " + name + ", Rating: " + rating);
     }
 }
+
+
+// @author LivNTI

@@ -6,10 +6,12 @@ public class Invenetory {
     //attributes
     public ArrayList<Item> items = new ArrayList<>();
 
+
     //constructor
     public Invenetory() {
-        items.add(new Weapon());
-        
+        items.add(new Weapon("Butter knife", 10));
+        items.add(new Consumable(5, "Good soup"));
+
     }
 
     //methods
@@ -18,7 +20,11 @@ public class Invenetory {
         for (Item item : items) {
             System.out.println(item.name);
 
+
         }
     }
 
 }
+
+
+//author: LivNTI

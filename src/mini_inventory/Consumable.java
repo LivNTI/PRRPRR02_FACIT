@@ -20,3 +20,6 @@ public class Consumable extends Item {
         }
     }
 }
+
+
+//author: LivNTI

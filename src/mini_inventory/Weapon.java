@@ -9,9 +9,9 @@ public class Weapon extends Item {
 
 
     //contructors
-    public Weapon() {
-
-
+    public Weapon(String name, int maxDamage) {
+        this.name = name;
+        this.maxDamage = maxDamage;
     }
 
     //methods
@@ -22,3 +22,6 @@ public class Weapon extends Item {
         return damage;
     }
 }
+
+
+//author: LivNTI

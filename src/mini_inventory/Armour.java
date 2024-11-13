@@ -13,3 +13,6 @@ public class Armour extends Item {
 
     //methods
 }
+
+
+//author: LivNTI

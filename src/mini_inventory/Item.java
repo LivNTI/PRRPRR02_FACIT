@@ -7,7 +7,6 @@ public class Item {
 
     //contructors
     public Item() {
-
     }
 
     //methods
